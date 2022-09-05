@@ -5,8 +5,18 @@ from APP.forms import *
 
 # Create your views here.
 def inicio(req):
-    # futura carátula de la página
-    return render(req, 'index.html')
+        # Vista para mostrar todos los datos de las 3 tablas
+    familiares = Familiares.objects.all()
+    amigos = Amigos.objects.all()
+    colegas = Colegas.objects.all()
+    
+    contexto = {
+        'familiares': familiares,
+        'amigos': amigos,
+        'colegas': colegas,
+    }
+    
+    return render(req, 'index.html', contexto)
 
 def agregarFamiliar(req):
     # 2) chequeo que la info venga por verbo POST
@@ -132,22 +142,4 @@ def busqueda_nombre_post_colega(request):
     }
     return render(request, 'formulario_filtrado_resultado.html', contexto)
 
-
-def mostrar_todo(request):
-    # Vista para mostrar todos los datos de las 3 tablas
-    familiares = Familiares.objects.all()
-    amigos = Amigos.objects.all()
-    colegas = Colegas.objects.all()
-
-
-
-    contexto = {
-
-        'familiares': familiares,
-        'amigos': amigos,
-        'colegas': colegas,
-
-
-    }
-    return render(request, 'mostrar_todo.html', contexto)
 

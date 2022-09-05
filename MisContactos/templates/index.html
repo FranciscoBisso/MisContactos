@@ -11,9 +11,7 @@
 			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
 			crossorigin="anonymous"
 		/>
-		{% block link %}
-
-		{% endblock %}
+		{% block link %} {% endblock %}
 
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -53,7 +51,85 @@
 				{{message}}
 			</div>
 			{% endfor %}
-			<h2 style="text-align: center">SOY EL HOME</h2>
+			<br />
+			<h2 style="text-align: center; color: #ebebeb">MIS CONTACTOS</h2>
+			<div>
+				<h4>Familia</h4>
+				<hr />
+				<table class="table table-dark table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Email</th>
+							<th scope="col">Edad</th>
+							<th scope="col">Registro</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for familia in familiares %}
+						<tr>
+							<td>{{familia.nombre}}</td>
+							<td>{{familia.email}}</td>
+							<td>{{familia.edad}}</td>
+							<td>{{familia.registro}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+
+				<br />
+				<hr />
+				<h4>Amigos</h4>
+				<hr />
+				<table class="table table-dark table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Email</th>
+							<th scope="col">Edad</th>
+							<th scope="col">Registro</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for amigo in amigos %}
+						<tr>
+							<td>{{amigo.nombre}}</td>
+							<td>{{amigo.email}}</td>
+							<td>{{amigo.edad}}</td>
+							<td>{{amigo.registro}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+
+				<br />
+				<hr />
+				<h4>Colegas</h4>
+				<hr />
+				<table class="table table-dark table-striped">
+					<thead>
+						<tr>
+							<th scope="col">Nombre</th>
+							<th scope="col">Email</th>
+							<th scope="col">Edad</th>
+							<th scope="col">Registro</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for colega in colegas %}
+						<tr>
+							<td>{{colega.nombre}}</td>
+							<td>{{colega.email}}</td>
+							<td>{{colega.edad}}</td>
+							<td>{{colega.registro}}</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
 		</main>
 
 		{% endblock %}
