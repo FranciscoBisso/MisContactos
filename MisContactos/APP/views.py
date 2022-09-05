@@ -89,7 +89,7 @@ def agregarColega(req):
 
 
 def busqueda_nombre(request):
-
+    # Vista para entregar formulario y mostrar lo filtrado
     contexto = {
         'form': BusquedaFamiliarFormulario(),
         'formAmigo': BusquedaAmigoFormulario(),
@@ -98,13 +98,13 @@ def busqueda_nombre(request):
     return render(request, 'formulario_filtrado.html', contexto)
 
 
+
 def busqueda_nombre_post(request):
-    nombre  = request.GET.get('nombre')
+    # Recibo el nombre para filtrar
+    nombre= request.GET.get('nombre')
 
     nombres = Familiares.objects.filter(nombre__icontains = nombre)
-
-
-
+    # paso los datos que encontro al contexto
     contexto = {
         'nombres' : nombres
     }
@@ -112,8 +112,9 @@ def busqueda_nombre_post(request):
 
 
 def busqueda_nombre_post_amigo(request):
+    # Recibo el nombre para filtrar
     nombre  = request.GET.get('nombre')
-
+    # paso los datos que encontro al contexto
     nombres = Amigos.objects.filter(nombre__icontains = nombre)
 
     contexto = {
@@ -123,9 +124,9 @@ def busqueda_nombre_post_amigo(request):
 
 def busqueda_nombre_post_colega(request):
     nombre  = request.GET.get('nombre')
-
+    # Recibo el nombre para filtrar
     nombres = Colegas.objects.filter(nombre__icontains = nombre)
-
+    # paso los datos que encontro al contexto
     contexto = {
         'nombres' : nombres
     }
@@ -133,7 +134,7 @@ def busqueda_nombre_post_colega(request):
 
 
 def mostrar_todo(request):
-
+    # Vista para mostrar todos los datos de las 3 tablas
     familiares = Familiares.objects.all()
     amigos = Amigos.objects.all()
     colegas = Colegas.objects.all()
