@@ -1,0 +1,39 @@
+{% extends 'index.html' %} {% block title %}
+<title>Agregar Contacto</title>
+{% endblock %} {% block main %}
+<main style="background-color: #252525; height: calc(100vh - 60px)">
+	<div
+		style="
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 10%;
+		"
+	>
+		<div class="mb-3" style="width: 60%">
+			<a
+				class="form-control"
+				style="text-decoration: none; text-align: center; margin: 2%"
+				href="{% url 'agregarFamiliar' %}"
+				>AGREGAR FAMILIAR</a
+			>
+		</div>
+		<div class="mb-3" style="width: 60%">
+			<a
+				class="form-control"
+				style="text-decoration: none; text-align: center; margin: 2%"
+				href="{% url 'agregarAmigo' %}"
+				>AGREGAR AMIGO</a
+			>
+		</div>
+		<div class="mb-3" style="width: 60%">
+			<a
+				class="form-control"
+				style="text-decoration: none; text-align: center; margin: 2%"
+				href="{% url 'agregarColega' %}"
+				>AGREGAR COLEGA</a
+			>
+		</div>
+	</div>
+</main>
+{% endblock %}

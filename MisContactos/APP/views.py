@@ -18,7 +18,10 @@ def inicio(req):
     
     return render(req, 'index.html', contexto)
 
-def agregarFamiliar(req):
+def agregar_contacto(req):
+    return render(req, 'agregar_contacto.html')
+
+def agregar_familiar(req):
     # 2) chequeo que la info venga por verbo POST
     if req.method == 'POST':
         formulario = FormularioPersonas(req.POST)
@@ -44,7 +47,7 @@ def agregarFamiliar(req):
     }
     return render(req, 'formulario.html', contexto)
 
-def agregarAmigo(req):
+def agregar_amigo(req):
     # 2) chequeo que la info venga por verbo POST
     if req.method == 'POST':
         formulario = FormularioPersonas(req.POST)
@@ -71,7 +74,7 @@ def agregarAmigo(req):
     return render(req, 'formulario.html', contexto)
 
 
-def agregarColega(req):
+def agregar_colega(req):
     # 2) chequeo que la info venga por verbo POST
     if req.method == 'POST':
         formulario = FormularioPersonas(req.POST)
