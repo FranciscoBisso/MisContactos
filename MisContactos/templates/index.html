@@ -27,6 +27,7 @@
 		style="
 			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
 				sans-serif;
+			background-color: #201f1d;
 		"
 	>
 		<!-- HEADER -->
@@ -34,13 +35,7 @@
 
 		<!-- MAIN -->
 		{% block main %}
-		<main
-			style="
-				background-color: #252525;
-				color: white;
-				height: calc(100vh - 60px);
-			"
-		>
+		<main style="background-color: #252525; color: white">
 			<!-- mensajes -->
 			{% for message in messages %}
 			<div
@@ -129,6 +124,7 @@
 						{% endfor %}
 					</tbody>
 				</table>
+				<br />
 			</div>
 		</main>
 
