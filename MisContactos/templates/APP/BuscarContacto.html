@@ -1,10 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
+	<head>
+		{% load static %}
+
+		{% block title %}
+		<title>Buscar Contacto</title>
+		{% endblock %}
+	</head>
+	<body>
+		<!-- HEADER -->
+		{% include 'base/header.html' %}
+
+		<!-- MAIN -->
+		{% block main %}
+		<main>Buscar Contacto</main>
+		<br>
+		  {% for familiar in familiares %}
+        El nombre del curso es {{familiar.nombre}} con la edad {{familiar.edad}} <br> <hr>
+		{% endfor %}
+
+		{% endblock %}
+
+		<!-- FOOTER -->
+		{% include 'base/footer.html' %}
+
+
+	</body>
 </html>
