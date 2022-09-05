@@ -86,3 +86,21 @@ def agregarColega(req):
         'form': FormularioPersonas()
     }
     return render(req, 'formulario.html', contexto)
+
+def busqueda_nombre_post(request):
+    nombre  = request.GET.get('nombre')
+
+    nombres = Familiares.objects.filter(nombre__icontains = nombre)
+
+    contexto = {
+        'nombres' : nombres
+    }
+    return render(request, 'formulario_filtrado_resultado.html', contexto)
+
+
+def busqueda_nombre(request):
+
+    contexto = {
+        'form' : BusquedaFamiliarFormulario(),
+    }
+    return render(request, 'formulario_filtrado.html', contexto)

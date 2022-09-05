@@ -5,3 +5,7 @@ class FormularioPersonas(forms.Form):
     email = forms.EmailField()
     edad = forms.IntegerField()
     registro = forms.DateField()
+
+
+class BusquedaFamiliarFormulario(forms.Form):
+    nombre = forms.CharField(max_length=30)
