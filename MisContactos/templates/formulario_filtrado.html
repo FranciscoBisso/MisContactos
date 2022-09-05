@@ -39,72 +39,78 @@
 				height: calc(100vh - 60px);
 			"
 		>
+			<div class="container text-center">
+				<div class="row">
+					<!-- Familiares -->
+					<div class="col">
+						<form action="/APP/busqueda_nombre_post" method="GET">
+							{% csrf_token %}
+							<div class="card" style="width: 18rem">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										Buscar Familiar
+									</li>
+									<li class="list-group-item">
+										{{ form.as_p }}
+									</li>
+									<li class="list-group-item">
+										<input type="submit" value="Buscar" />
+									</li>
+								</ul>
+							</div>
+						</form>
+					</div>
+					<!-- Amigos -->
+					<div class="col">
+						<form
+							action="/APP/busqueda_nombre_post_amigo"
+							method="GET"
+						>
+							{% csrf_token %}
+							<div class="card" style="width: 18rem">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										Buscar Amigos
+									</li>
+									<li class="list-group-item">
+										{{ form.as_p }}
+									</li>
+									<li class="list-group-item">
+										<input type="submit" value="Buscar" />
+									</li>
+								</ul>
+							</div>
+						</form>
+					</div>
 
+					<!-- Colegas -->
+					<div class="col">
+						<form
+							action="/APP/busqueda_nombre_post_colega"
+							method="GET"
+						>
+							{% csrf_token %}
+							<div class="card" style="width: 18rem">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item">
+										Buscar Colegas
+									</li>
+									<li class="list-group-item">
+										{{ form.as_p }}
+									</li>
+									<li class="list-group-item">
+										<input type="submit" value="Buscar" />
+									</li>
+								</ul>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 
-
-<!-- Familiares -->
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-
-    </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-		<!-- Familiares -->
-      <form action="/APP/busqueda_nombre_post" method="GET"> {% csrf_token %}
-			  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush ">
-    <li class="list-group-item">Buscar Familiar</li>
-    <li class="list-group-item">{{ form.as_p }}</li>
-	    <li class="list-group-item"><input type="submit" value="Buscar"></li>
-  </ul>
- </div></form>
-    </div>
-    <div class="col">
-				<!-- Amigos -->
- <form action="/APP/busqueda_nombre_post_amigo" method="GET"> {% csrf_token %}
-			  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush ">
-    <li class="list-group-item">Buscar Amigos</li>
-    <li class="list-group-item">{{ form.as_p }}</li>
-	    <li class="list-group-item"><input type="submit" value="Buscar"></li>
-  </ul>
- </div></form>
-    </div>
-    <div class="col">
-     <!-- Colegas -->
- <form action="/APP/busqueda_nombre_post_colega" method="GET"> {% csrf_token %}
-			  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush ">
-    <li class="list-group-item">Buscar Colegas</li>
-    <li class="list-group-item">{{ form.as_p }}</li>
-	    <li class="list-group-item"><input type="submit" value="Buscar"></li>
-  </ul>
- </div></form>
-    </div>
-  </div>
-</div>
-
-
-			<hr>
-
-
+			<hr />
+		</main>
 		{% endblock %}
-
-
-
-
-
-
 
 		<!-- FOOTER -->
 		{% include 'base/footer.html' %}
