@@ -87,10 +87,23 @@ def agregarColega(req):
     }
     return render(req, 'formulario.html', contexto)
 
+
+def busqueda_nombre(request):
+
+    contexto = {
+        'form': BusquedaFamiliarFormulario(),
+        'formAmigo': BusquedaAmigoFormulario(),
+        'formColega': BusquedaColegaFormulario(),
+    }
+    return render(request, 'formulario_filtrado.html', contexto)
+
+
 def busqueda_nombre_post(request):
     nombre  = request.GET.get('nombre')
 
     nombres = Familiares.objects.filter(nombre__icontains = nombre)
+
+
 
     contexto = {
         'nombres' : nombres
@@ -98,9 +111,42 @@ def busqueda_nombre_post(request):
     return render(request, 'formulario_filtrado_resultado.html', contexto)
 
 
-def busqueda_nombre(request):
+def busqueda_nombre_post_amigo(request):
+    nombre  = request.GET.get('nombre')
+
+    nombres = Amigos.objects.filter(nombre__icontains = nombre)
 
     contexto = {
-        'form' : BusquedaFamiliarFormulario(),
+        'nombres' : nombres
     }
-    return render(request, 'formulario_filtrado.html', contexto)
+    return render(request, 'formulario_filtrado_resultado.html', contexto)
+
+def busqueda_nombre_post_colega(request):
+    nombre  = request.GET.get('nombre')
+
+    nombres = Colegas.objects.filter(nombre__icontains = nombre)
+
+    contexto = {
+        'nombres' : nombres
+    }
+    return render(request, 'formulario_filtrado_resultado.html', contexto)
+
+
+def mostrar_todo(request):
+
+    familiares = Familiares.objects.all()
+    amigos = Amigos.objects.all()
+    colegas = Colegas.objects.all()
+
+
+
+    contexto = {
+
+        'familiares': familiares,
+        'amigos': amigos,
+        'colegas': colegas,
+
+
+    }
+    return render(request, 'mostrar_todo.html', contexto)
+

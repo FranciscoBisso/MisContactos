@@ -42,67 +42,104 @@
 
 
 
-<!-- Familiares -->
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-
-    </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-<div class="container text-center">
-  <div class="row">
-    <div class="col">
-		<!-- Familiares -->
-      <form action="/APP/busqueda_nombre_post" method="GET"> {% csrf_token %}
-			  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush ">
-    <li class="list-group-item">Buscar Familiar</li>
-    <li class="list-group-item">{{ form.as_p }}</li>
-	    <li class="list-group-item"><input type="submit" value="Buscar"></li>
-  </ul>
- </div></form>
-    </div>
-    <div class="col">
-				<!-- Amigos -->
- <form action="/APP/busqueda_nombre_post_amigo" method="GET"> {% csrf_token %}
-			  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush ">
-    <li class="list-group-item">Buscar Amigos</li>
-    <li class="list-group-item">{{ form.as_p }}</li>
-	    <li class="list-group-item"><input type="submit" value="Buscar"></li>
-  </ul>
- </div></form>
-    </div>
-    <div class="col">
-     <!-- Colegas -->
- <form action="/APP/busqueda_nombre_post_colega" method="GET"> {% csrf_token %}
-			  <div class="card" style="width: 18rem;">
-  <ul class="list-group list-group-flush ">
-    <li class="list-group-item">Buscar Colegas</li>
-    <li class="list-group-item">{{ form.as_p }}</li>
-	    <li class="list-group-item"><input type="submit" value="Buscar"></li>
-  </ul>
- </div></form>
-    </div>
-  </div>
-</div>
-
-
 			<hr>
 
+<h4>Familia</h4>
+          <hr>
+	<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Edad</th>
+		<th scope="col">Registro</th>
+    </tr>
 
-		{% endblock %}
+  </thead>
+
+  <tbody>
+  {% for familia in familiares %}
+    <tr>
+
+      <td>{{familia.nombre}}</td>
+      <td>{{familia.email}}</td>
+      <td>{{familia.edad}}</td>
+		<td>{{familia.registro}}</td>
+    </tr>
+
+  </tbody>
+
+
+	     {% endfor %}
+</table>
+
+<br>
+          <hr>
+<h4>Amigos</h4>
+          <hr>
+	<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Edad</th>
+		<th scope="col">Registro</th>
+    </tr>
+
+  </thead>
+
+  <tbody>
+  {% for amigo in amigos %}
+    <tr>
+
+      <td>{{amigo.nombre}}</td>
+      <td>{{amigo.email}}</td>
+      <td>{{amigo.edad}}</td>
+		<td>{{amigo.registro}}</td>
+    </tr>
+
+  </tbody>
+
+
+	     {% endfor %}
+</table>
 
 
 
+			<br>
+          <hr>
+<h4>Colegas</h4>
+          <hr>
+	<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Email</th>
+      <th scope="col">Edad</th>
+		<th scope="col">Registro</th>
+    </tr>
 
+  </thead>
+
+  <tbody>
+  {% for colega in colegas %}
+    <tr>
+
+      <td>{{colega.nombre}}</td>
+      <td>{{colega.email}}</td>
+      <td>{{colega.edad}}</td>
+		<td>{{colega.registro}}</td>
+    </tr>
+
+  </tbody>
+
+
+	     {% endfor %}
+</table>
+
+
+
+{% endblock %}
 
 
 

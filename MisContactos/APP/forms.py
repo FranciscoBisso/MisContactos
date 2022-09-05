@@ -9,3 +9,9 @@ class FormularioPersonas(forms.Form):
 
 class BusquedaFamiliarFormulario(forms.Form):
     nombre = forms.CharField(max_length=30)
+
+class BusquedaAmigoFormulario(forms.Form):
+    nombre = forms.CharField(max_length=30)
+
+class BusquedaColegaFormulario(forms.Form):
+    nombre = forms.CharField(max_length=30)
