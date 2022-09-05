@@ -23,6 +23,7 @@ def buscar_contacto(request):
          return redirect('AppCoderCursoFormulario')  """
 
     familiares = Familiares.objects.all()
+
     contexto = {
 
        # 'form': CursoFormulario(),
@@ -30,3 +31,20 @@ def buscar_contacto(request):
 
     }
     return render(request, 'APP/BuscarContacto.html', contexto)
+
+def buscar_contactoEspecifico(request):
+    familia = request.GET.get('buscar', None)
+
+    familiares = Familiares.objects.filter(nombre__icontains=familia)
+
+    contexto = {
+        'familiares': familiares
+    }
+    return render(request, 'APP/Buscar.html', contexto)
+
+def busqueda_camada(request):
+
+    contexto = {
+        'form' : BusquedaCamadaFormulario(),
+    }
+    return render(request, 'AppCoder/busquedaCamada.html', contexto)

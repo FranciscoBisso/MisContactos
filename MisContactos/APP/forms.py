@@ -5,3 +5,6 @@ class FamiliaresForms(forms.Form):
     email = forms.EmailField()
     edad = forms.IntegerField()
     registro = forms.DateField()
+
+class buscarFamiliar(forms.Form):
+    nombre = forms.CharField(max_length=30)
