@@ -11,17 +11,47 @@
 			integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
 			crossorigin="anonymous"
 		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@1,700&family=Cinzel:wght@700&family=Monoton&family=Oswald&family=Playfair+Display:ital,wght@1,600&family=Pontano+Sans&family=Roboto&family=Syncopate&display=swap"
+			rel="stylesheet"
+		/>
 		{% block title %}
 		<title>HOME</title>
 		{% endblock %}
 	</head>
-	<body>
+	<body
+		style="
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+				sans-serif;
+		"
+	>
 		<!-- HEADER -->
 		{% include 'base/header.html' %}
 
 		<!-- MAIN -->
 		{% block main %}
-		<main>SOY EL HOME</main>
+		<main
+			style="
+				background-color: #252525;
+				color: white;
+				height: calc(100vh - 60px);
+			"
+		>
+			<!-- mensajes -->
+			{% for message in messages %}
+			<div
+				style="text-align: center; border-radius: 0px"
+				class="alert alert-success"
+				role="alert"
+			>
+				{{message}}
+			</div>
+			{% endfor %}
+			<h2 style="text-align: center">SOY EL HOME</h2>
+		</main>
+
 		{% endblock %}
 		<!-- FOOTER -->
 		{% include 'base/footer.html' %}

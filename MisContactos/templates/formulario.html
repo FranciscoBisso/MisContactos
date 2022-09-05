@@ -1,0 +1,56 @@
+{% extends 'index.html' %} {% block title %}
+<title>Formulario</title>
+{% endblock %} {% block main %}
+<main style="background-color: #252525; height: calc(100vh - 60px)">
+	<form
+		action=""
+		method="POST"
+		style="width: 80%; margin: 0 auto; padding: 55px"
+	>
+		{% csrf_token %}
+
+		<h4 style="color: white; text-align: center">Información Personal:</h4>
+
+		<div class="form-floating mb-3">
+			<input
+				type="text"
+				class="form-control"
+				id="id_nombre"
+				name="nombre"
+			/>
+			<label for="id_nombre">Nombre y Apellido:</label>
+		</div>
+		<div class="form-floating mb-3">
+			<input
+				type="text"
+				class="form-control"
+				id="id_email"
+				name="email"
+			/>
+			<label for="email">Email:</label>
+		</div>
+		<div class="form-floating mb-3">
+			<input
+				type="number"
+				class="form-control"
+				id="id_edad"
+				name="edad"
+			/>
+			<label for="id_edad">Edad:</label>
+		</div>
+		<div class="form-floating mb-3">
+			<input
+				type="date"
+				class="form-control"
+				id="id_registro"
+				name="registro"
+			/>
+			<label for="id_registro">Registro:</label>
+		</div>
+
+		<div style="display: flex; justify-content: center">
+			<input class="btn btn-secondary" type="submit" value="ENVIAR" />
+		</div>
+	</form>
+</main>
+{% endblock %}
