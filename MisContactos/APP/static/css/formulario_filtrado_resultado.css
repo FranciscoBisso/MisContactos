@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ffr-main {
+    background-color: #252525;
+    height: calc(100vh - 60px);
+}
+
+.ffr-h4 {
+    color: white;
+    text-align: center;
+    padding: 4% 0;
+}
