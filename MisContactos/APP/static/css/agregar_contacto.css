@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.agregar_contacto-main {
+    background-color: #252525;
+    height: calc(100vh - 60px);
+}
+
+.agregar_contacto-div-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+}
+
+.agregar_contacto-div {
+    width: 60%;
+}
+
+.agregar_contacto-a {
+    text-decoration: none;
+    text-align: center;
+    margin: 2%;
+}
